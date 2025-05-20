@@ -55,10 +55,9 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="LoadBtn"
+                Text="Herladen"
+                Clicked="OnLoadBtnClick"
                 HorizontalOptions="Fill" />
             
         </VerticalStackLayout>

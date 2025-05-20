@@ -12,7 +12,7 @@ namespace MauiAppLevi
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnLoadBtnClick(object sender, EventArgs e)
         {
             count++;
             ListView.ItemsSource = new List<Article>
