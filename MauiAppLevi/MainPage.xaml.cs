@@ -5,8 +5,6 @@ namespace MauiAppLevi
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
@@ -14,7 +12,6 @@ namespace MauiAppLevi
 
         private void OnLoadBtnClick(object sender, EventArgs e)
         {
-            count++;
             ListView.ItemsSource = new List<Article>
             {
                 new Article("Title 1", "Content 1"),
