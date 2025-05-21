@@ -5,6 +5,7 @@ namespace MauiAppLevi
 {
     public partial class MainPage : ContentPage
     {
+        RestService _restService = new();
         public MainPage()
         {
             InitializeComponent();
@@ -12,12 +13,8 @@ namespace MauiAppLevi
 
         private void OnLoadBtnClick(object sender, EventArgs e)
         {
-            ListView.ItemsSource = new List<Article>
-            {
-                new Article("Title 1", "Content 1"),
-                new Article("Title 2", "Content 2"),
-                new Article("Title 3", "Content 3"),
-            };
+            _restService.UpdateArticleList();
+            ListView.ItemsSource = _restService.Items;
         }
     }
 
