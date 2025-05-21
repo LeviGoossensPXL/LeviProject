@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MauiAppLevi.Models;
 
 namespace MauiAppLevi
 {
@@ -29,6 +30,13 @@ namespace MauiAppLevi
             var data = (JObject)JsonConvert.DeserializeObject(jsonContent.Result);
 
             Items = JsonConvert.DeserializeObject<List<ArticleGetModel>>(data.GetValue("articles").ToString());
+        }
+        
+        public void PostArticle(ArticlePostModel articlePostModel)
+        {
+            var httpResponseMessage = _client.PostAsync("Article", new StringContent(JsonConvert.SerializeObject(articlePostModel), Encoding.UTF8, "application/json"));
+            httpResponseMessage.Wait();
+            httpResponseMessage.Result.EnsureSuccessStatusCode();
         }
     }
 }

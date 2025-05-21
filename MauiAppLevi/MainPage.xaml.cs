@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using ClassLibraryLevi.Business.Entities;
+using MauiAppLevi.Models;
 
 namespace MauiAppLevi
 {
@@ -15,6 +16,14 @@ namespace MauiAppLevi
         {
             _restService.UpdateArticleList();
             ListView.ItemsSource = _restService.Items;
+            //_restService.PostArticle(new ArticlePostModel
+            //{
+            //    Title = "Test",
+            //    Content = "Test",
+            //    PublishedTime = DateTime.Now,
+            //    AuthorName = "Test",
+            //    Category = Category.General
+            //});
         }
     }
 
