@@ -18,6 +18,7 @@ namespace MauiAppLevi
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddTransient<PostArticlePage>();
 
             return builder.Build();
         }

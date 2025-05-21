@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppLevi.PostArticlePage"
+             Title="Maak een Nieuw Artikel">
+    <VerticalStackLayout Margin="15,0,15,0">
+        <StackLayout Margin="8" HorizontalOptions="Start">
+            <Label Text="Title"  Margin="10,0,0,10"/>
+            <Entry Placeholder="Title" WidthRequest="250" x:Name="titleEntry"/>
+        </StackLayout>
+        <StackLayout Margin="8" HorizontalOptions="Start">
+            <Label Text="Content:" Margin="10,0,0,10"/>
+            <Editor WidthRequest="500" HeightRequest="200" x:Name="contentEditor"/>
+        </StackLayout>
+        <StackLayout Margin="8" HorizontalOptions="Start">
+            <Label Text="Published Date:" Margin="10,0,0,10"/>
+            <DatePicker x:Name="publishedDatePicker"/>
+        </StackLayout>
+        <StackLayout Margin="8" HorizontalOptions="Start">
+            <Label Text="Author Name:" Margin="10,0,0,10"/>
+            <Entry WidthRequest="200" x:Name="authorEntry"/>
+        </StackLayout>
+        <StackLayout Margin="8" HorizontalOptions="Start">
+            <Label Text="Category:" Margin="10,0,0,10"/>
+            <Picker WidthRequest="200" x:Name="categoryPicker"/>
+        </StackLayout>
+        <StackLayout Margin="8" HorizontalOptions="Start">
+            <Label WidthRequest="200" Margin="3" Padding="5" x:Name="statusLabel"/>
+            <Button Text="Post Article" WidthRequest="200" HorizontalOptions="Start" x:Name="postArticleButton" Clicked="postArticleButton_Clicked"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
