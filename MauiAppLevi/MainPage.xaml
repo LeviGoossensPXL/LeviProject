@@ -1,20 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MauiAppLevi"
+             xmlns:entities="clr-namespace:ClassLibraryLevi.Business.Entities;assembly=ClassLibraryLevi"
              x:Class="MauiAppLevi.MainPage">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            
-            <ListView x:Name="ResultListView"></ListView>
+
+            <ListView x:Name="ListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ArticleGetModel">
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.RowSpan="2"
+                                       Text="{Binding Title}"
+                                       HeightRequest="60"
+                                       WidthRequest="60"
+                                       FontAttributes="Bold"/>
+                                <Label Grid.Column="1"
+                                       Text="{Binding Category}"
+                                       HeightRequest="60"
+                                       WidthRequest="60"/>
+                                <Label Grid.Column="2"
+                                       Text="{Binding AuthorName}"
+                                       HeightRequest="60"
+                                       WidthRequest="60"
+                                       FontAttributes="Bold"/>
+                                <Label Grid.Column="1"
+                                       Grid.Row="1"
+                                       HeightRequest="60"
+                                       WidthRequest="60"
+                                       Text="{Binding Content}"/>
+                                <Label Grid.Row="1"
+                                       Grid.Column="2"
+                                       HeightRequest="60"
+                                       WidthRequest="60"
+                                       Text="{Binding PublishedTime}"
+                                       FontAttributes="Italic"
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="LoadBtn"
+                Text="Herladen"
+                Clicked="OnLoadBtnClick"
                 HorizontalOptions="Fill" />
+            
         </VerticalStackLayout>
     </ScrollView>
 

@@ -5,16 +5,16 @@ namespace MauiAppLevi
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
+        RestService _restService = new();
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnLoadBtnClick(object sender, EventArgs e)
         {
-            count++;
+            _restService.UpdateArticleList();
+            ListView.ItemsSource = _restService.Items;
         }
     }
 
